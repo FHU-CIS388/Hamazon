@@ -132,5 +132,16 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\dshannon.jpg" />
+    <BundleResource Include="Resources\CurvedMask.png" />
+    <BundleResource Include="Resources\CurvedMask%402x.png" />
+    <BundleResource Include="Resources\CurvedMask%403x.png" />
+    <BundleResource Include="Resources\ham7.jpg" />
+    <BundleResource Include="Resources\ham6.jpg" />
+    <BundleResource Include="Resources\ham5.jpg" />
+    <BundleResource Include="Resources\ham4.jpg" />
+    <BundleResource Include="Resources\ham3.jpg" />
+    <BundleResource Include="Resources\ham8.jpg" />
+    <BundleResource Include="Resources\ham2.jpg" />
+    <BundleResource Include="Resources\ham1.jpg" />
   </ItemGroup>
 </Project>
