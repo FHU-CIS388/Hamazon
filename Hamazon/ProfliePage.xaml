@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Hamazon.ProfliePage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+
+             x:Class="Hamazon.ProfliePage">
     <ContentPage.Content>
 
         <ScrollView>
@@ -13,23 +17,56 @@
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
                 <!-- Header -->
-                <BoxView HeightRequest="200" BackgroundColor="Blue" Grid.Row="0"/>
-
+                <Image Source="ham3.jpg" Grid.Row="0" />
+                
                 <!-- Profile Image-->
-                <Image Source="dshannon.jpg" WidthRequest="100" HeightRequest="100" Grid.Row="1"/>
+                <controls:CircleImage
+                    Source="dshannon.jpg"
+                       WidthRequest="200"
+                       HeightRequest="200"
+                       HorizontalOptions="Center"
+                       TranslationY="-100"
+                       Aspect="AspectFill"
+                        BorderColor="Gray"
+                        BorderThickness="2"
+                       Grid.Row="1"/>
 
-                <!-- Stats-->
-                <StackLayout Orientation="Horizontal" Grid.Row="2">
-                     <Label Text="3" FontSize="Title" />
-                     <Label Text="8" FontSize="Title" />
-                     <Label Text="11" FontSize="Title" />
-                </StackLayout>
+                <!-- Stats -->
+
+                <Grid Grid.Row="2" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout Orientation="Vertical" Grid.Column="0" >
+                        <Label Text="33" FontSize="Title" HorizontalTextAlignment="Center"/>
+                        <Label Text="Bacons" FontSize="Caption" HorizontalTextAlignment="Center"/> 
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical" Grid.Column="1">
+                        <Label Text="40" FontSize="Title" HorizontalTextAlignment="Center"/>
+                        <Label Text="Sausages" FontSize="Caption" HorizontalTextAlignment="Center"/> 
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical" Grid.Column="2">
+                        <Label Text="33" FontSize="Title" HorizontalTextAlignment="Center" />
+                        <Label Text="Ribs" FontSize="Caption" HorizontalTextAlignment="Center"/> 
+                    </StackLayout>
+
+                </Grid>
 
                 <!-- Bio-->
-                <BoxView HeightRequest="400" BackgroundColor="Orange" Grid.Row="3"/>
+                <Label
+                    Grid.Row="3"
+                    Margin="10, 20, 20, 10"
+                    Text="This is a bio about me. I'm pretty cool. I like bacon. And turtles."
+                       HorizontalTextAlignment="Center"
+                       FontSize="Medium" TextColor="Gray" />
 
                 <!-- Bacon Button -->
-                <BoxView HeightRequest="50" BackgroundColor="Gray" Grid.Row="4"/>
+                <Button Text="Git Bacon" BackgroundColor="Teal" TextColor="White" Grid.Row="4" Margin="10,30" />
 
             </Grid>
 
