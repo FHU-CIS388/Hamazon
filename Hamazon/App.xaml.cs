@@ -12,7 +12,8 @@ namespace Hamazon
 
             //MainPage = new MainPage();
             //MainPage = new ProfliePage();
-            MainPage = new ProductsListPage();
+
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()

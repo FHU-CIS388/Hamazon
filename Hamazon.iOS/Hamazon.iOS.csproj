@@ -146,5 +146,7 @@
     <BundleResource Include="Resources\ham8.jpg" />
     <BundleResource Include="Resources\ham2.jpg" />
     <BundleResource Include="Resources\ham1.jpg" />
+    <BundleResource Include="Resources\baseline_menu_white_18dp.png" />
+    <BundleResource Include="Resources\baseline_search_white_18dp.png" />
   </ItemGroup>
 </Project>

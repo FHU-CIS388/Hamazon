@@ -1,7 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Hamazon.MainPage">
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-    </StackLayout>
-</ContentPage>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:local="clr-namespace:Hamazon"
+            mc:Ignorable="d"
+            x:Class="Hamazon.MainPage">
+    <TabbedPage.Children>
+
+        <NavigationPage Title="Home">
+            <x:Arguments>
+                <local:HomePage/>
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Products">
+            <x:Arguments>
+                <local:ProductsListPage/>
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Profile">
+            <x:Arguments>
+                <local:ProfliePage/>
+            </x:Arguments>
+        </NavigationPage>
+
+
+    </TabbedPage.Children>
+</TabbedPage>

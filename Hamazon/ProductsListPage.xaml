@@ -1,7 +1,16 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Hamazon.ProductsListPage">
+             x:Class="Hamazon.ProductsListPage"
+             Title="HAMAZON"
+             >
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem IconImageSource="baseline_menu_white_18dp.png" />
+        <ToolbarItem IconImageSource="baseline_search_white_18dp.png" />
+
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
 
         <ListView x:Name="ProductsListView">
