@@ -2,8 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Hamazon.ProductsListPage"
-             Title="HAMAZON"
-             >
+             BackgroundColor="{StaticResource BackgroundColor}"
+             Title="HAMAZON">
     <ContentPage.ToolbarItems>
 
         <ToolbarItem IconImageSource="baseline_menu_white_18dp.png" />
@@ -13,21 +13,24 @@
 
     <ContentPage.Content>
 
-        <ListView x:Name="ProductsListView" HasUnevenRows="True">
+        <ListView x:Name="ProductsListView"
+                  HasUnevenRows="True">
             <ListView.ItemTemplate>
-                <DataTemplate >
-                    <ViewCell >
-                        <StackLayout Orientation="Horizontal" Margin="30,10">
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal"
+                                     Margin="30,10">
                             <Label Text="{Binding Name}"
                                    HorizontalOptions="StartAndExpand"
-                                   Style="{StaticResource TitleLabel}"
-                                    />
-                            <Label Text="{Binding Price}" FontSize="Title" HorizontalOptions="End" />
+                                   Style="{StaticResource TitleLabel}" />
+                            <Label Text="{Binding Price}"
+                                   Style="{StaticResource SubtitleLabel}"
+                                   HorizontalOptions="End" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-            
+
         </ListView>
 
     </ContentPage.Content>
