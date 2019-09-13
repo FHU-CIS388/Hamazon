@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             Title="Profile"
              x:Class="Hamazon.ProfliePage">
     <ContentPage.Content>
 
@@ -83,8 +84,7 @@
 
                 <!-- Bacon Button -->
                 <Button Text="Git Bacon"
-                        BackgroundColor="Teal"
-                        TextColor="White"
+                        Style="{StaticResource ButtonStyle}"
                         Grid.Row="4"
                         Margin="10,30" />
 

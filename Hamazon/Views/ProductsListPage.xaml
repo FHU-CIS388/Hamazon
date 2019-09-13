@@ -13,12 +13,15 @@
 
     <ContentPage.Content>
 
-        <ListView x:Name="ProductsListView">
+        <ListView x:Name="ProductsListView" HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate >
-                    <ViewCell>
-                        <StackLayout Orientation="Horizontal" >
-                            <Label Text="{Binding Name}" FontSize="Large" HorizontalOptions="StartAndExpand"/>
+                    <ViewCell >
+                        <StackLayout Orientation="Horizontal" Margin="30,10">
+                            <Label Text="{Binding Name}"
+                                   HorizontalOptions="StartAndExpand"
+                                   Style="{StaticResource TitleLabel}"
+                                    />
                             <Label Text="{Binding Price}" FontSize="Title" HorizontalOptions="End" />
                         </StackLayout>
                     </ViewCell>
