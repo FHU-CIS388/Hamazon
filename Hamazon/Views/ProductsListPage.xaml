@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Hamazon.ProductsListPage"
              BackgroundColor="{StaticResource BackgroundColor}"
+             xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
              Title="HAMAZON">
     <ContentPage.ToolbarItems>
 
@@ -13,25 +14,78 @@
 
     <ContentPage.Content>
 
-        <ListView x:Name="ProductsListView"
-                  HasUnevenRows="True">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Orientation="Horizontal"
-                                     Margin="30,10">
-                            <Label Text="{Binding Name}"
-                                   HorizontalOptions="StartAndExpand"
-                                   Style="{StaticResource TitleLabel}" />
-                            <Label Text="{Binding Price}"
-                                   Style="{StaticResource SubtitleLabel}"
-                                   HorizontalOptions="End" />
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
-        </ListView>
+            <cv:CarouselViewControl  Grid.Row="0"
+                                     HeightRequest="270"
+                                     ItemsSource="{Binding CarouselItems}"
+                                     x:Name="SpecialsCarouselView"
+                                     HorizontalOptions="FillAndExpand"
+                                     ShowIndicators="True"
+                                     IndicatorsShape="Circle"
+                                     CurrentPageIndicatorTintColor="Black"
+                                     IndicatorsTintColor="White"
+                                     AnimateTransition="True">
+                <cv:CarouselViewControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid HorizontalOptions="FillAndExpand"
+                              VerticalOptions="FillAndExpand">
+                            <Image Source="{Binding Image}"
+                                   Aspect="AspectFill"
+                                   HorizontalOptions="FillAndExpand" />
+                            <StackLayout Orientation="Vertical"
+                                         Spacing="15"
+                                         Margin="30,20,0,0"
+                                         VerticalOptions="Center"
+                                         HorizontalOptions="FillAndExpand">
+
+                                <Label Text="HEADING"
+                                       TextColor="White"
+                                       FontSize="14" />
+                                <BoxView HeightRequest="1"
+                                         WidthRequest="50"
+                                         Color="White"
+                                         HorizontalOptions="Start"
+                                         Opacity="0.8" />
+                                <Label Text="50% Off Everything"
+                                       TextColor="White"
+                                       FontSize="35" />
+                                <Label Text="CAPTION"
+                                       TextColor="White"
+                                       FontSize="16" />
+
+                            </StackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </cv:CarouselViewControl.ItemTemplate>
+
+            </cv:CarouselViewControl>
+
+            <ListView x:Name="ProductsListView"
+                      HasUnevenRows="True"
+                      ItemsSource="{Binding Products}"
+                      Grid.Row="1">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"
+                                         Margin="30,10">
+                                <Label Text="{Binding Name}"
+                                       HorizontalOptions="StartAndExpand"
+                                       Style="{StaticResource TitleLabel}" />
+                                <Label Text="{Binding Price}"
+                                       Style="{StaticResource SubtitleLabel}"
+                                       HorizontalOptions="End" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
 
     </ContentPage.Content>
 </ContentPage>

@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using ImageCircle.Forms.Plugin.Droid;
+using CarouselView.FormsPlugin.Android;
 
 namespace Hamazon.Droid
 {
@@ -23,6 +24,7 @@ namespace Hamazon.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             ImageCircleRenderer.Init();
+            CarouselViewRenderer.Init();
 
             LoadApplication(new App());
         }
