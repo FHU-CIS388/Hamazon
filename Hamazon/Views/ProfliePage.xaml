@@ -1,10 +1,11 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
-             Title="PROFILE"
-             BackgroundColor="{StaticResource BackgroundColor}"
-             x:Class="Hamazon.ProfliePage">
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="Hamazon.ProfliePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+    Title="PROFILE"
+    BackgroundColor="{StaticResource BackgroundColor}">
     <ContentPage.Content>
 
         <ScrollView>
@@ -17,23 +18,35 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
-                <!-- Header -->
-                <Image Source="ham3.jpg"
-                       Grid.Row="0" />
+                <!--  Header  -->
+                <Image Grid.Row="0" Source="ham3.jpg" />
 
-                <!-- Profile Image-->
-                <controls:CircleImage
-                    Source="dshannon.jpg"
-                    WidthRequest="200"
-                    HeightRequest="200"
-                    HorizontalOptions="Center"
-                    TranslationY="-100"
-                    Aspect="AspectFill"
-                    BorderColor="Gray"
-                    BorderThickness="2"
-                    Grid.Row="1" />
+                <!--  Profile Image  -->
+                <StackLayout Grid.Row="1" TranslationY="-100">
 
-                <!-- Stats -->
+                    <controls:CircleImage
+                        Aspect="AspectFill"
+                        BorderColor="Gray"
+                        BorderThickness="2"
+                        HeightRequest="200"
+                        HorizontalOptions="Center"
+                        Source="dshannon.jpg"
+                        WidthRequest="200" />
+
+                    <Label
+                        x:Name="nameLabel"
+                        FontSize="Body"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding FullName}" />
+
+                    <Entry
+                        x:Name="nameEntry"
+                        Placeholder="type here"
+                        Text="{Binding FullName}" />
+
+                </StackLayout>
+
+                <!--  Stats  -->
 
                 <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions>
@@ -42,52 +55,56 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <StackLayout Orientation="Vertical"
-                                 Grid.Column="0">
-                        <Label Text="33"
-                               FontSize="Title"
-                               HorizontalTextAlignment="Center" />
-                        <Label Text="Bacons"
-                               FontSize="Caption"
-                               HorizontalTextAlignment="Center" />
+                    <StackLayout Grid.Column="0" Orientation="Vertical">
+                        <Label
+                            FontSize="Title"
+                            HorizontalTextAlignment="Center"
+                            Text="33" />
+                        <Label
+                            FontSize="Caption"
+                            HorizontalTextAlignment="Center"
+                            Text="Bacons" />
                     </StackLayout>
 
-                    <StackLayout Orientation="Vertical"
-                                 Grid.Column="1">
-                        <Label Text="40"
-                               FontSize="Title"
-                               HorizontalTextAlignment="Center" />
-                        <Label Text="Sausages"
-                               FontSize="Caption"
-                               HorizontalTextAlignment="Center" />
+                    <StackLayout Grid.Column="1" Orientation="Vertical">
+                        <Label
+                            FontSize="Title"
+                            HorizontalTextAlignment="Center"
+                            Text="40" />
+                        <Label
+                            FontSize="Caption"
+                            HorizontalTextAlignment="Center"
+                            Text="Sausages" />
                     </StackLayout>
 
-                    <StackLayout Orientation="Vertical"
-                                 Grid.Column="2">
-                        <Label Text="33"
-                               FontSize="Title"
-                               HorizontalTextAlignment="Center" />
-                        <Label Text="Ribs"
-                               FontSize="Caption"
-                               HorizontalTextAlignment="Center" />
+                    <StackLayout Grid.Column="2" Orientation="Vertical">
+                        <Label
+                            FontSize="Title"
+                            HorizontalTextAlignment="Center"
+                            Text="33" />
+                        <Label
+                            FontSize="Caption"
+                            HorizontalTextAlignment="Center"
+                            Text="Ribs" />
                     </StackLayout>
 
                 </Grid>
 
-                <!-- Bio-->
+                <!--  Bio  -->
                 <Label
                     Grid.Row="3"
-                    Margin="10, 20, 20, 10"
-                    Text="This is a bio about me. I'm pretty cool. I like bacon. And turtles."
-                    HorizontalTextAlignment="Center"
+                    Margin="10,20,20,10"
                     FontSize="Medium"
+                    HorizontalTextAlignment="Center"
+                    Text="This is a bio about me. I'm pretty cool. I like bacon. And turtles."
                     TextColor="Gray" />
 
-                <!-- Bacon Button -->
-                <Button Text="Git Bacon"
-                        Style="{StaticResource ButtonStyle}"
-                        Grid.Row="4"
-                        Margin="10,30" />
+                <!--  Bacon Button  -->
+                <Button
+                    Grid.Row="4"
+                    Margin="10,30"
+                    Style="{StaticResource ButtonStyle}"
+                    Text="Git Bacon" />
 
             </Grid>
 
